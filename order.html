@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta content="width=device-width, initial-scale=1.0" name="viewport">
+      <title>MUNJIZ</title>
+      <meta name="description" content="">
+      <meta name="keywords" content="">
+      <!-- Favicons -->
+      <link href="img/logo.png" rel="icon">
+      <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+      <link href="https://fonts.googleapis.com" rel="preconnect">
+      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet">
+      <!-- Vendor CSS Files -->
+      <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+      <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+      <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+      <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+      <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+      <link rel="stylesheet" href="assets/sweetalert.css" />
+      <!-- Main CSS File -->
+      <link href="assets/css/main.css" rel="stylesheet">
+      <link href="assets/common.css" rel="stylesheet" />
+      <link href="style.css" rel="stylesheet" />
+      <link rel="stylesheet" type="text/css" href="assets/order.css">
+      <link rel="stylesheet" type="text/css" href="order.css">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css" rel="stylesheet">
+   </head>
+   <body class="index-page">
+      <header id="header" class="header d-flex align-items-center sticky-top">
+         <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
+            <a href="javascript:void(0)" class="logo d-flex align-items-center me-auto me-xl-0" >
+               <h1 class="sitename"></h1>
+            </a>
+            <nav id="navmenu" class="navmenu">
+               <ul dir="rtl">
+                  <li><a href="index.html#hero" class="<?=($flag == 'is_home') ? 'active' : ''?>"> الرئيسية</a></li>
+                  <li><a href="index.html#featured-services"> خدماتنا</a></li>
+                  <li><a href="order.html" class="<?=($flag == 'is_order') ? 'active' : ''?>">قدم طلب </a></li>
+                  <li><a href="index.html#footer-servicess"> تواصل معنا</a></li>
+               </ul>
+               <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+            </nav>
+            <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+               <!-- Uncomment the line below if you also wish to use an image logo -->
+               <img src="img/logo.png" alt="">
+               <h1 class="sitename">  منجز</h1>
+            </a>
+         </div>
+      </header>
+      <main class="main">
+         <section class="signup-step-container">
+            <div class="container">
+               <div class="row d-flex justify-content-center">
+                  <div class="col-md-12">
+                     <div class="wizard">
+                        <div class="wizard-inner">
+                           <div class="connecting-line"></div>
+                           <ul class="nav nav-tabs" role="tablist" dir="rtl">
+                              <li role="presentation"  class="active">
+                                 <a href="#step1" data-toggle="tab" aria-controls="step1" role="tab" aria-expanded="true"><span class="round-tab" id="stepFirst">1</span></a>
+                              </li>
+                              <li role="presentation" class="disabled">
+                                 <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" aria-expanded="false"><span class="round-tab" id="stepSecond">2</span></a>
+                              </li>
+                              <li role="presentation" id="stepThird" class="disabled">
+                                 <a href="#step3" data-toggle="tab" aria-controls="step3" role="tab"><span class="round-tab" id="stepThird">3</span></a>
+                              </li>
+                           </ul>
+                        </div>
+                        <form role="form" action="#" method="post" class="login-box" enctype="multipart/form-data">
+                           <div class="tab-content" id="main_form">
+                              <!-- Step 1 -->
+                              <div class="tab-pane active" role="tabpanel" id="step1">
+                                 <div class="row"  dir="rtl">
+                                    <div class="col-md-6">
+                                       <div class="form-group position-relative">
+                                          <label>نوع التمويل</label>
+                                          <select class="form-select mt-2" name="financing_type" id="financing_type">
+                                             <option value=""></option>
+                                             <!--<option value="">ادخل نوع التمويل هنا</option>-->
+                                             <option value="تمويل سيارات">تمويل سيارات</option>
+                                             <option value="تمويل شخصي ">تمويل شخصي </option>
+                                             <option value="تمويل عقاري">تمويل عقاري</option>
+                                          </select>
+                                          <span class="chevron-icon">
+                                             <i class="bi bi-chevron-down"></i> <!-- Chevron-down icon from Bootstrap Icons -->
+                                          </span>
+                                       </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                       <div class="form-group">
+                                          <label>الاسم الثلاثي</label>
+                                          <input class="form-control mt-2" type="text" name="full_name" id="full_name" placeholder="ادخل الاسم الثلاثي هنا">
+                                       </div>
+                                    </div>
+                                    <div class="col-md-6 mt-5">
+                                       <div class="form-group">
+                                          <label>رقم الجوال</label>
+                                          <input class="form-control mt-2" type="text" id="mobile" name="mobile" maxlength="9" oninput="this.value = this.value.replace(/[^0-9]/g, '')" placeholder="ادخل رقم الجوال هنا">
+                                          <input class="form-control mt-2" type="hidden"  id="varifed_mobile" placeholder="">
+                                          <button type="button" id="verify_mobile_btn" class="btn btn-primary mt-2"  style="display: none;">التحقق من رقم الجوال</button>
+                                       </div>
+                                    </div>
+                                    <div class="col-md-6 mt-5">
+                                       <div class="form-group">
+                                          <label>رقم الهوية</label>
+                                          <input class="form-control mt-2" type="text" name="id_number" id="id_number"  maxlength="10" oninput="this.value = this.value.replace(/[^0-9]/g, '')" placeholder="ادخل رقم الهوية هنا">
+                                       </div>
+                                    </div>
+                                    <div class="col-md-6 mt-5">
+                                       <div class="form-group">
+                                          <label>ادخل جهة العمل</label>
+                                          <!--  <select class="form-select mt-2" name="employer">
+                                             <option>ادخل  جهة العمل هنا</option>
+                                             <option>عسكري</option>
+                                             <option>حكومي</option>
+                                             <option>خاص</option>
+                                             <option>شبه خاص</option>
+                                             </select> -->
+                                          <div class="dropdown mt-2" dir="rtl">
+                                             <button class="btn btn-outline-secondary dropdown-toggle w-100" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                             ادخل  جهة العمل هنا
+                                             </button>
+                                             <span class="chevron-icon" style="margin-top: -7px;">
+                                                <i class="bi bi-chevron-down"></i> <!-- Chevron-down icon from Bootstrap Icons -->
+                                             </span>
+                                             <ul class="dropdown-menu w-100" dir="rtl" aria-labelledby="dropdownMenuButton1">
+                                                <li class="dropdown-submenu">
+                                                   <a class="dropdown-item dropdown-toggle"  dir="rtl" href="#">عسكري</a>
+                                                   <ul class="dropdown-menu">
+                                                      <li><a class="dropdown-item" data-value="-جندي" href="#">جندي</a></li>
+                                                      <li><a class="dropdown-item" data-value="-جندي أول" href="#">-جندي أول</a></li>
+                                                      <li><a class="dropdown-item" data-value="-عريف" href="#">-عريف</a></li>
+                                                      <li><a class="dropdown-item" data-value="-وكيل رقيب" href="#">-وكيل رقيب</a></li>
+                                                      <li><a class="dropdown-item" data-value="رقيب" href="#">رقيب</a></li>
+                                                      <li><a class="dropdown-item" data-value="-رقيب أول" href="#">-رقيب أول</a></li>
+                                                      <li><a class="dropdown-item" data-value="-رئيس رقباء" href="#">-رئيس رقباء</a></li>
+                                                      <li><a class="dropdown-item" data-value="-ملازم" href="#">-ملازم</a></li>
+                                                      <li><a class="dropdown-item" data-value="-ملازم اول" href="#">-ملازم اول</a></li>
+                                                      <li><a class="dropdown-item" data-value="-نقيب" href="#">-نقيب</a></li>
+                                                      <li><a class="dropdown-item" data-value="-رائد" href="#">-رائد</a></li>
+                                                      <li><a class="dropdown-item" data-value="-مقدم" href="#">-مقدم</a></li>
+                                                      <li><a class="dropdown-item" data-value="-عقيد" href="#">-عقيد</a></li>
+                                                      <li><a class="dropdown-item" data-value="-عميد" href="#">-عميد</a></li>
+                                                      <li><a class="dropdown-item" data-value="-لواء" href="#">-لواء</a></li>
+                                                      <li><a class="dropdown-item" data-value="-ملازم طيار" href="#">-ملازم طيار</a></li>
+                                                      <li><a class="dropdown-item" data-value="-ملازم طيار أول" href="#">-ملازم طيار أول</a></li>
+                                                      <li><a class="dropdown-item" data-value="-نقيب طيار" href="#">-نقيب طيار</a></li>
+                                                      <li><a class="dropdown-item" data-value="-رائد طيار" href="#">-رائد طيار</a></li>
+                                                      <li><a class="dropdown-item" data-value="-مقدم طيار" href="#">-مقدم طيار</a></li>
+                                                      <li><a class="dropdown-item" data-value="-عقيد طيار" href="#">-عقيد طيار</a></li>
+                                                      <li><a class="dropdown-item" data-value="-عميد طيار" href="#">-عميد طيار</a></li>
+                                                      <li><a class="dropdown-item" data-value="-لواء طيار" href="#">-لواء طيار</a></li>
+                                                   </ul>
+                                                </li>
+                                                <li><a class="dropdown-item" data-value="حكومي" href="#">حكومي</a></li>
+                                                <li><a class="dropdown-item" data-value="خاص" href="#">خاص</a></li>
+                                                <li><a class="dropdown-item" data-value="شبه خاص" href="#">شبه خاص</a></li>
+                                             </ul>
+                                          </div>
+                                          <input type="hidden" name="employer" id="selected_option" value="">
+                                       </div>
+                                    </div>
+                                    <div class="col-md-6 mt-5">
+                                       <div class="form-group position-relative">
+                                          <label>ادخل البنك اللي ينزل عليه الراتب</label>
+                                          <select class="form-select mt-2" name="bank" id="bankdetail">
+                                             <option value=""></option>
+                                             <!--<option value="">ادخل البنك اللي ينزل عليه الراتب هنا</option>-->
+                                             <option value="البنك الاهلي السعودي">البنك الاهلي السعودي</option>
+                                             <option value="بنك الراجحي">بنك الراجحي</option>
+                                             <option value="بنك الرياض">بنك الرياض</option>
+                                             <option value="البنك السعودي البريطاني">البنك السعودي البريطاني</option>
+                                             <option value="البنك العربي الوطني">البنك العربي الوطني</option>
+                                             <option value="بنك الانماء">بنك الانماء</option>
+                                             <option value="البنك السعودي الفرنسي">البنك السعودي الفرنسي</option>
+                                             <option value="البنك السعودي للاستثمار">البنك السعودي للاستثمار</option>
+                                             <option value="بنك الجزيرة">بنك الجزيرة</option>
+                                             <option value="بنك البلاد">بنك البلاد</option>
+                                             <option value="بنك الخليج الدولي - السعودية">بنك الخليج الدولي - السعودية</option>
+                                             <option value="بنك ساب الأول">بنك ساب الأول</option>
+                                          </select>
+                                          <span class="chevron-icon">
+                                             <i class="bi bi-chevron-down"></i> <!-- Chevron-down icon from Bootstrap Icons -->
+                                          </span>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <ul class="list-inline pull-right">
+                                    <li><button type="button" id="next-step_first" class="default-btn next-step">التالي</button></li>
+                                 </ul>
+                              </div>
+                              <!-- Step 2 -->
+                              <div class="tab-pane" role="tabpanel" id="step2">
+                                 <div class="row" dir="rtl">
+                                    <div class="col-md-6">
+                                       <div class="form-group position-relative">
+                                          <label>تاريخ الميلاد</label>
+                                          <input class="form-control mt-2" type="text" name="dob" id="dob" placeholder="ادخل الميلاد">
+                                          <span class="calendar-icon" id="calendar-icon">
+                                             <i class="bi bi-calendar"></i> <!-- Bootstrap calendar icon -->
+                                          </span>
+                                       </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                       <div class="form-group position-relative">
+                                          <label>تاريخ التعين</label>
+                                          <input class="form-control mt-2" type="text" name="appointment_date" id="appointment_date"  placeholder="ادخل التعين">
+                                          <span class="calendar-icon" id="calendar-icon">
+                                             <i class="bi bi-calendar"></i> <!-- Bootstrap calendar icon -->
+                                          </span>
+                                       </div>
+                                    </div>
+                                    <div class="col-md-6 mt-5">
+                                       <div class="form-group position-relative">
+                                          <label>هل يوجد التزامات</label>
+                                          <select class="form-select mt-2" name="obligation">
+                                             <option value=""></option>
+                                             <!--<option value="">هل يوجد التزامات</option>-->
+                                             <option value="نعم">نعم</option>
+                                             <option value="لا">لا</option>
+                                          </select>
+                                          <span class="chevron-icon">
+                                             <i class="bi bi-chevron-down"></i> <!-- Chevron-down icon from Bootstrap Icons -->
+                                          </span>
+                                       </div>
+                                    </div>
+                                    <div class="col-md-6 mt-5"></div>
+                                    <label class="mt-5" style="font-weight: bold;">عدد سنوات التمويل المطلوبه</label>
+                                    <div class="col-md-6 mt-5">
+                                       <fieldset class="slider-container">
+                                          <label for="input-slider" class="number--label" dir="rtl">0</label>
+                                          <input type="range" id="input-slider" name="no_of_year_financing" class="input-slider" min="0" max="25" step="1" value="0">
+                                       </fieldset>
+                                    </div>
+                                    <div class="col-md-6 mt-5"></div>
+                                    <label class="mt-4" style="font-weight: bold;">
+                                       ارفاق صوره تعريف الراتب</lable>
+                                       <div class="col-md-6">
+                                          <div class="upload mt-3">
+                                             <div class="upload-box">
+                                                <img src="img/feather_upload-cloud.png" alt="Upload Icon">
+                                                <div class="edit">
+                                                   <span>Select a file or drag and drop here </span>
+                                                   <small>JPG, PNG or PDF, file size no more than 10MB</small>
+                                                </div>
+                                                <!-- Hidden file input -->
+                                                <input type="file" id="fileInput" name="file" style="display: none;" accept=".jpg, .png, .pdf">
+                                                <!-- Button that triggers the file input -->
+                                                <button type="button" class="button primary" id="fileSelectButton">Select a file</button>
+                                             </div>
+                                          </div>
+                                       </div>
+                                 </div>
+                                 <ul class="list-inline pull-right">
+                                 <li><button type="button" id="the_previous" class="default-btn prev-step">السابق</button></li>
+                                 <li><button type="button" id="the_next" class="default-btn next-step the_next_second">التالي</button></li>
+                                 <li><button type="submit" id="the_next_submit" class="default-btn next-step">تاكيد</button></li>
+                                 </ul>
+                              </div>
+                              <!-- Step 3 -->
+                              <div class="tab-pane" role="tabpanel" id="step3">
+                              <div class="row" dir="rtl">
+                              <div class="col-md-6">
+                              <div class="form-group position-relative">
+                              <label>هل انت مستحق للدعم السكني</label>
+                              <select class="form-select mt-2" name="housing_support" id="housing_support">
+                              <option value=""></option>
+                              <!--<option value="">هل انت مستحق للدعم السكني</option>-->
+                              <option value="نعم">نعم</option>
+                              <option value="لا">لا</option>
+                              </select>
+                              <span class="chevron-icon">
+                              <i class="bi bi-chevron-down"></i> <!-- Chevron-down icon from Bootstrap Icons -->
+                              </span>
+                              </div>
+                              </div>
+                              <div class="col-md-6" id="typeofrealestatefinancing">
+                              <div class="form-group position-relative">
+                              <label>نوع التمويل العقاري</label>
+                              <select class="form-select mt-2" name="type_of_real_estate_financing" id="type_of_real_estate_financing">
+                              <option value=""></option>
+                              <!--<option value="">نوع التمويل العقاري</option>-->
+                              <option value="وحده جاهزه">وحده جاهزه</option>
+                              <option value="بيع على الخارطة">بيع على الخارطة</option>
+                              <option value="بناء ذاتي">بناء ذاتي</option>
+                              <option value="أخرى">أخرى</option>
+                              </select>
+                              <span class="chevron-icon">
+                              <i class="bi bi-chevron-down"></i> <!-- Chevron-down icon from Bootstrap Icons -->
+                              </span>
+                              </div>
+                              </div>
+                              </div>
+                              <ul class="list-inline pull-right">
+                              <li><button type="button" id="the_previous" class="default-btn prev-step">السابق</button></li>
+                              <li><button type="button" id="the_next" class="default-btn next-step">تاكيد</button></li>
+                              </ul>
+                              </div>
+                              <div class="clearfix"></div>
+                           </div>
+                        </form>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <div class="modal fade" id="otpModal" tabindex="-1" aria-labelledby="otpModalLabel" aria-hidden="true" dir="rtl">
+            <div class="modal-dialog">
+               <div class="modal-content">
+                  <div class="modal-header">
+                     <h5 class="modal-title" id="otpModalLabel">أدخل كلمة المرور لمرة واحدة</h5>
+                     <!-- <button type="button" class="btn-close"  data-bs-dismiss="modal" aria-label="Close" style="position: absolute; right: 90%;"></button> -->
+                  </div>
+                  <div class="modal-body">
+                     <form onsubmit="verifyOTP()" id="otpForm">
+                        <div class="mt-4 my-3">
+                           <span>ادخل رمز التحقق </span><!-- <span id="email"></span> -->
+                           <div class="otp-input mt-2"  dir="ltr">
+                              <input type="number" min="0" max="9">
+                              <input type="number" min="0" max="9">
+                              <input type="number" min="0" max="9">
+                              <input type="number" min="0" max="9">
+                              <input type="number" min="0" max="9">
+                              <input type="number" min="0" max="9">
+                           </div>
+                           <div id="otpError" class="text-danger mt-2" style="display: none;"></div>
+                           <button  type="submit" class="btn btn-primary mt-3">التالي</button>
+                           <!--    <div class="resend-text">
+                              Didn't receive the code? 
+                              <span class="resend-link" onclick="resendOTP()">Resend Code</span>
+                              <span id="timer"></span>
+                              </div> -->
+                        </div>
+                     </form>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </main>
+      <footer id="footer" class="footer dark-background">
+         <div class="copyright text-center">
+            <div class="container d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between align-items-center">
+               <div class="d-flex flex-column align-items-center align-items-lg-start" style="margin-top: 10px;">
+                  <div class="rdf" style="    text-align: right;">
+                     <h5 style="color: #fff;" dir="rtl">
+                        تسهيلات لحياتك اليومية، مع  <br> منصة منجز نعمل منذ عام  <br>  2018 في قطاع التعقيب وسداد  <bR>الديون
+                     </h5>
+                  </div>
+               </div>
+               <div class="social-links order-first order-lg-last mb-3 mb-lg-0" style="margin-top: -10px;">
+                  <h1 style="color:#fff">منجز</h1>
+               </div>
+            </div>
+            <div class="container cta-container">
+               <div class="line"></div>
+               <a class="cta-button" style="color: #000;">قدم طلبك</a>
+            </div>
+         </div>
+         <div class="footer-top">
+            <div class="container">
+               <div class="row">
+                  <div class="col-lg-4 col-md-6">
+                     <div class="footer-contact pt-3">
+                     </div>
+                  </div>
+                  <div class="col-lg-2 col-md-3">
+                     <ul style="text-align: right !important;">
+                        <li>
+                           <a href="#">
+                           الشروط<br>والأحكام
+                           </a>
+                        </li>
+                        <br>
+                        <li>
+                           <a href="#">
+                           سياسة<br>الاستخدام
+                           </a>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="col-lg-2 col-md-3 ">
+                     <ul style="text-align: right !important;">
+                        <li><a href="#">تويتر</a></li>
+                        <br>
+                        <li><a href="#" >تك توك</a></li>
+                        <br>
+                        <li><a href="#" >واتساب</a></li>
+                     </ul>
+                  </div>
+                  <div class="col-lg-4 col-md-3">
+                     <ul style="text-align: right !important;">
+                        <span class="footer-title-text">من نحن</span><br><br>
+                        <span>تسهيلات لحياتك اليومية، مع منصة منجز  <bR>نعمل منذ عام 2018 في قطاع التعقيب   <br>وسداد الديون
+                     </ul>
+                  </div>
+                  <div class="col-lg-6 col-md-6">
+                     <div class="footer-contact pt-3">
+                        <p>جميع الحقوق محفوظة لـ منجز  ©٢٠٢٤ </p>
+                     </div>
+                  </div>
+                  <div class="col-lg-6 col-md-6">
+                     <div class="footer-contact pt-3">
+                        <p style="text-align:right;">101 Marlow Street. #12-05 Clife Parkview. Riyadh 059020 . </p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </footer>
+      <!-- Scroll Top -->
+      <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+      <!-- Preloader -->
+      <div id="preloader"></div>
+      <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap-datepicker/dist/locales/bootstrap-datepicker.ar.min.js"></script>
+      <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+      <script src="order.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+      <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <script src="assets/vendor/php-email-form/validate.js"></script>
+      <script src="assets/vendor/aos/aos.js"></script>
+      <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+      <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+      <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+      <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+      <script type="text/javascript" src="assets/sweetalert.min.js"></script> 
+      <!-- Main JS File -->
+      <script src="assets/js/main.js"></script>
+   </body>
+   <script>
+      const tickerWrapper = document.getElementById('ticker-wrapper');
+      tickerWrapper.innerHTML += tickerWrapper.innerHTML; // Duplicate items for seamless scrolling
+   </script>
+</html>
